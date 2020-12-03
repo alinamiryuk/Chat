@@ -1,14 +1,15 @@
 import React from 'react'
-import './ChatList.css'
+import './Sidebar.css'
 import { Avatar, IconButton } from '@material-ui/core'
 import { SearchOutlined, Chat, MoreVert, DonutLarge } from '@material-ui/icons'
+import { SidebarChat } from './SidebarChat/SidebarChat'
 
-export const ChatList = () => {
+export const Sidebar = () => {
   return (
-    <div className="chatlist">
-      <div className="chatlist__header">
+    <div className="sidebar">
+      <div className="sidebar__header">
         <Avatar src="https://avatars3.githubusercontent.com/u/64744719?s=60&v=4" />
-        <div className="chatlist__headerRight">
+        <div className="sidebar__headerIcons">
           <IconButton>
             <DonutLarge />
           </IconButton>
@@ -20,11 +21,16 @@ export const ChatList = () => {
           </IconButton>
         </div>
       </div>
-      <div className="chatlist__search">
-        <div className="chatlist__searchContainer">
+      <div className="sidebar__search">
+        <div className="sidebar__searchContainer">
           <SearchOutlined />
           <input placeholder="search your chat" type="text" />
         </div>
+      </div>
+      <div className="sidebar__chats">
+        <SidebarChat />
+        <SidebarChat />
+        <SidebarChat />
       </div>
     </div>
   )
