@@ -1,5 +1,5 @@
 import { Avatar, IconButton } from '@material-ui/core'
-import { AttachFile, MoreVert, SearchOutlined } from '@material-ui/icons'
+import { AttachFile, InsertEmoticon, MoreVert, SearchOutlined } from '@material-ui/icons'
 import React from 'react'
 import './Chat.css'
 
@@ -31,6 +31,19 @@ export const Chat = () => {
           message text
           <span className="chat__datetime">{new Date().toUTCString()}</span>
         </p>
+        <p className="chat__message">
+          <span className="chat__name">Alina</span>
+          message text
+          <span className="chat__datetime">{new Date().toUTCString()}</span>
+        </p>
+        <p className="chat__message chat__receiver">
+          <span className="chat__name">You</span>
+          message text
+          <span className="chat__datetime">{new Date().toUTCString()}</span>
+        </p>
+      </div>
+      <div className="chat__footer">
+        <InsertEmoticon />
       </div>
     </div>
   )
