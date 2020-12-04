@@ -12,7 +12,11 @@ const DB_KEY = process.env.DB_KEY
 
 app.use(express.json({ extended: true }))
 app.use(express.urlencoded({ extended: true }))
-
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  res.setHeader('Access-Control-Allow-Headers', '*')
+  next()
+})
 app.use('/api/messages', messagesRouter)
 
 app.listen(PORT, (err) => {
@@ -36,7 +40,7 @@ app.listen(PORT, (err) => {
       if (change.operationType === 'insert') {
         const messageDetails = change.fullDocument
         pusher.trigger('messages', 'inserted', {
-          sender: messageDetails.user,
+          sender: messageDetails.sender,
           text: messageDetails.text,
         })
       } else {
