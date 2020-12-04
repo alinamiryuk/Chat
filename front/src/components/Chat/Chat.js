@@ -1,5 +1,12 @@
 import { Avatar, IconButton } from '@material-ui/core'
-import { AttachFile, InsertEmoticon, MoreVert, SearchOutlined } from '@material-ui/icons'
+import {
+  AttachFile,
+  InsertEmoticon,
+  Mic,
+  MoreVert,
+  SearchOutlined,
+  Send,
+} from '@material-ui/icons'
 import React from 'react'
 import './Chat.css'
 
@@ -43,7 +50,18 @@ export const Chat = () => {
         </p>
       </div>
       <div className="chat__footer">
-        <InsertEmoticon />
+        <IconButton>
+          <InsertEmoticon />
+        </IconButton>
+        <form>
+          <input placeholder="Write a message..." type="text" />
+          <IconButton type="submit">
+            <Send />
+          </IconButton>
+        </form>
+        <IconButton>
+          <Mic />
+        </IconButton>
       </div>
     </div>
   )

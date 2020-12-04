@@ -33,14 +33,13 @@
 }
 
 .chat__message {
-  position: relative; 
+  position: relative;
   font-size: 16px;
   padding: 10px;
   width: fit-content;
   border-radius: 10px;
   background-color: darkgrey;
   margin-bottom: 30px;
-
 }
 
 .chat__datetime {
@@ -59,3 +58,25 @@
   margin-left: auto;
   background-color: mediumaquamarine;
 }
+
+.chat__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 62px;
+  border-top: 1px solid #6b7878;
+}
+
+.chat__footer > form {
+  display: flex;
+  flex: 1;
+}
+
+.chat__footer > form > input {
+  flex: 1;
+  border-radius: 30px;
+  padding: 10px;
+  border: none;
+  outline-width: 0;
+}
+
