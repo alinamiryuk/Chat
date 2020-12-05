@@ -1,6 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
+import cors from 'cors'
 import { messagesRouter } from './routes/messages.js'
 import { pusher } from './pusher.js'
 
@@ -12,11 +13,13 @@ const DB_KEY = process.env.DB_KEY
 
 app.use(express.json({ extended: true }))
 app.use(express.urlencoded({ extended: true }))
+app.use(cors())
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader('Access-Control-Allow-Headers', '*')
   next()
 })
+
 app.use('/api/messages', messagesRouter)
 
 app.listen(PORT, (err) => {
